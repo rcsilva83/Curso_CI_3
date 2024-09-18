@@ -32,9 +32,10 @@ jobs:
         username: ${{ secrets.REMOTE_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          export HOST = ${{ secrets.DBHOST }}
-          export PORT = ${{ secrets.DBPORT }}
-          export USER = ${{ secrets.DBUSER }}
-          export PASSWORD = ${{ secrets.DBPASSWORD }}
-          export DBNAME = ${{ secrets.DBNAME }}
+          export HOST=${{ secrets.DBHOST }}
+          export DBPORT=${{ secrets.DBPORT }}
+          export USER=${{ secrets.DBUSER }}
+          export PASSWORD=${{ secrets.DBPASSWORD }}
+          export DBNAME=${{ secrets.DBNAME }}
+          export PORT=8000
     
