@@ -8,6 +8,10 @@ ENV HOST=localhost DBPORT=5432
 
 ENV USER=root PASSWORD=root DBNAME=root
 
-COPY --chmod=0755 ./main main
+COPY ./main main
+
+RUN chmod +x main
+
+COPY ./templates/ templates/
 
 CMD [ "./main" ]
