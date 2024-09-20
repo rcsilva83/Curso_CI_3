@@ -42,3 +42,15 @@ jobs:
         service: Servico_API-Go
         cluster: API-Go
         wait-for-service-stability: true
+
+    - name: Verifica serviço
+      run: sleep 30s ; wget LB-API-Go-1889091112.sa-east-1.elb.amazonaws.com:8000/rodrigo
+
+    - name: Deploy Amazon ECS old task definition
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v2
+      if: failure()
+      with:
+        task-definition: task-definition.json.old
+        service: Servico_API-Go
+        cluster: API-Go
+        wait-for-service-stability: true
